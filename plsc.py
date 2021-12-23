@@ -7,15 +7,15 @@ __copyright__   = 'DE LAFONTAINE, Charles; 2021-2022'
 #   --> PLSC <--
 ###
 
-from numpy import int8, ndarray, chararray, str0
+from numpy import int32, ndarray
 
 def PLSC(ORIGIN: str, EXTERNAL: str, COMPARED_FILE_NAME: str = "") -> tuple():
     ARRAY_LENGTH    = (len(ORIGIN) + 1, len(EXTERNAL) + 1)
     DIAG_DIR        = 11
     LEFT_DIR        = 10
     TOP_DIR         = 1
-    PLSC_WEIGHT     = ndarray((ARRAY_LENGTH[0], ARRAY_LENGTH[1]), dtype=int8)
-    PLSC_DIR        = ndarray((ARRAY_LENGTH[0], ARRAY_LENGTH[1]), dtype=int8)
+    PLSC_WEIGHT     = ndarray((ARRAY_LENGTH[0], ARRAY_LENGTH[1]), dtype=int32)
+    PLSC_DIR        = ndarray((ARRAY_LENGTH[0], ARRAY_LENGTH[1]), dtype=int32)
 
     PLSC_WEIGHT.fill(0)
     PLSC_DIR.fill(0)
