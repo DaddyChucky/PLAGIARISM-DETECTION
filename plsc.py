@@ -9,7 +9,7 @@ __copyright__   = 'DE LAFONTAINE, Charles; 2021-2022'
 
 from numpy import int8, ndarray, chararray, str0
 
-def PLSC(ORIGIN: str, EXTERNAL: str) -> tuple():
+def PLSC(ORIGIN: str, EXTERNAL: str, COMPARED_FILE_NAME: str = "") -> tuple():
     ARRAY_LENGTH    = (len(ORIGIN) + 1, len(EXTERNAL) + 1)
     DIAG_DIR        = 11
     LEFT_DIR        = 10
@@ -61,4 +61,4 @@ def PLSC(ORIGIN: str, EXTERNAL: str) -> tuple():
         else:
             Y -= 1
 
-    return round(PLSC_FINAL_WEIGHT / min(len(ORIGIN), len(EXTERNAL)), 5), "" + str(PLSC_FINAL_WEIGHT) + "/" + str(min(len(ORIGIN), len(EXTERNAL))), PLSC[::-1], 
+    return round(PLSC_FINAL_WEIGHT / min(len(ORIGIN), len(EXTERNAL)), 5), "" + str(PLSC_FINAL_WEIGHT) + "/" + str(min(len(ORIGIN), len(EXTERNAL))), COMPARED_FILE_NAME, PLSC[::-1], 
