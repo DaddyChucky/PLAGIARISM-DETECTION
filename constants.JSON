@@ -1,0 +1,9 @@
+{
+    "FOLDERS": {
+        "OUT": "OUT",
+        "EXOS": "EXOS"
+    },
+    "FILES": {
+        "OUT": "plscOut.JSON"
+    }
+}
