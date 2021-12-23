@@ -1,14 +1,12 @@
 [
     {
         "FILE": {
-            "NAME": "exercice1_palindrome.py",
+            "NAME": "exercice1_hello_poly.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#1__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defverifie_palindrome(mot):#Codequiv\u00c3\u00a9rifiesiunmotfournienparam\u00c3\u00a8treestounonunpalindrome.#Neconsid\u00c3\u00a9rerquedesmots(etnondesphrasesquisontdespalindromes).#Lesmajusculesnedoiventpas\u00c3\u00aatrediff\u00c3\u00a9renci\u00c3\u00a9esdeleur\u00c3\u00a9quivalentenminuscule.Exemple:Avaestunpalindrome,toutcommesALlut0tUaS.#Imprimedanslaconsole:Ilnes'agitpasd'unpalindromesicen'estpasunpalindrome.#Imprimedanslaconsole:Ils'agitd'unpalindromesic'estunpalindrome.passifmot.lower()==mot[::-1].lower():print(Ils'agitd'unpalindrome)else:print(Ilnes'agitpasd'unpalindrome)if__name__==__main__:verifie_palindrome(kayak)#Ils'agitd'unpalindromeverifie_palindrome(cheval)#Ilnes'agitpasd'unpalindromeverifie_palindrome(Eve)#Ils'agitd'unpalindromeverifie_palindrome(Anna)#Ils'agitd'unpalindrome",
-            "SIZE": 1125,
+            "CONTENT": "defhello_poly():crivezunefonctionquiimprimedansleconsoleallopolypassif==:hello_poly()allopoly",
+            "SIZE": 165,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -22,14 +20,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice2_verbe_er.py",
+            "NAME": "exercice2_prix_gateau.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#2__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defest_une_voyelle(ch):ch=ch.lower()ifchinaeiouy:returnTrueelse:returnFalsedefconjugue_verbe(mot):#Codequiprendunverbe\u00c3\u00a0l'infinitifseterminanteneretleconjugueaupr\u00c3\u00a9sent.#Sousleformatsuivantpourleverberegarder:Verbe:regarderJeregardeTuregardesIl/ElleregardeNousregardonsVousregardezIlsregardent#Sousleformatsuivantpourleverbeaimer:Verbe:aimerJ'aimeTuaimesIl/ElleaimeNousaimonsVousaimezIlsaiment#Faireattention\u00c3\u00a0l'utilisationduJ'etnonduJelorsqueleverbecommentparunevoyelle#Vouspouvezutiliserlafonctionest_une_voyelle()pourvousaider.Parexemple:est_une_voyelle(a)retourneraisvrai(True).radical=mot[:-2]Presence_Voyelle=est_une_voyelle(mot[0])ifPresence_Voyelle==True:#leverbecommenceparunevoyelleprint(J'+radical+e)else:print(je,radical+e)print(Tu,radical+es)print(Il/Elle,radical+e)print(Nous,radical+ons)print(Vous,radical+ez)print(Ils/Elles,radical+ent,end='\\n\\n')pronoms=[tu,il/elle,nous,vous,ils/elles]terminaisons=[e,es,e,ons,ez,ent]ifPresence_Voyelle==True:#leverbecommenceparunevoyellepronoms.insert(0,j')else:pronoms.insert(0,je)i=0whilei<len(terminaisons):print(pronoms[i]+radical+terminaisons[i])i+=1print(,end=\\n\\n)passif__name__==__main__:conjugue_verbe(soulever)conjugue_verbe(regarder)conjugue_verbe(aimer)",
-            "SIZE": 2014,
+            "CONTENT": "defprix_gateau():crivezunefonctionquiimprimedansleconsoleleprixdefabricationd'ungateauPourlecalculerilfautadditionnerleprixde3oeuf,d'uneunitdefarineetd'unedemieunitdelait.RFRENCEPRIXUNITAIREOeuf->0.25Farine->1.00Lait->1.80passif==:prix_gateau().65",
+            "SIZE": 416,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -43,14 +39,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice3_plus_long_mot.py",
+            "NAME": "exercice3_cannon.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#3__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defplus_long_mot(phrase):#Codequiprendunephraseetimprimesonpluslongmot.#Lesmotssonts\u00c3\u00a9par\u00c3\u00a9spardesespaces.J'aimeseraconsid\u00c3\u00a9r\u00c3\u00a9commeunseulmotde6lettres.#\u00c3\u20acnoterquenoussupposonsqu'aucunephraseneposs\u00c3\u00a8dequedesmotsdem\u00c3\u00aamelongueur.Plus_Long_Mot=taille_max=0i=0var=separateurs=.,;!?phrase=phrase+whilei<len(phrase):ifnot(phrase[i]inseparateurs):var=var+phrase[i]else:ifvar!=andlen(var)>taille_max:Plus_Long_Mot=vartaille_max=len(var)var=i+=1print(Plus_Long_Mot)passif__name__==__main__:plus_long_mot(J'adoremangerdescarottes.)#carottes",
-            "SIZE": 1002,
+            "CONTENT": "importmathdefverifie_distance(angle,vitesse):Enassumantunegravitde9.8m/s,etenprenantunangleendegretunevitesseenparamtre,enngligeanttouteautreforcequecellegravitationnelle,trouverlepointd'impactd'unprojectilelorsqu'iltoucheralasollammehauteurqu'ill'aquittpassif==:verifie_distance(30,10).83699391616774verifie_distance(1,10)0.35611731329082624verifie_distance(18,40)5.9649391497915",
+            "SIZE": 554,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -64,14 +58,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice4_remplace_tout.py",
+            "NAME": "exercice4_voiture.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#4__author__=Nom\u00c3\u00a9l\u00c3\u00a8ve1(matricule1),nom\u00c3\u00a9l\u00c3\u00a8ve2(matricule2)__date__=Datedederni\u00c3\u00a8remodificationdefremplace_tout(phrase,mot_a_remplacer,mot_rempla\u00c3\u00a7ant):#Codequiprendunephrase,unmot\u00c3\u00a0remplaceretunmotrempla\u00c3\u00a7antetr\u00c3\u00a9imprimelaphrase#enayantremplac\u00c3\u00a9lemot\u00c3\u00a0remplacerparlemotrempla\u00c3\u00a7antprint(phrase.replace(mot_a_remplacer,mot_rempla\u00c3\u00a7ant))passif__name__==__main__:remplace_tout(\\tMach\u00c3\u00a8reH\u00c3\u00a9loise,tueslesoleildemesjourn\u00c3\u00a9es,aucuneautrequetoiH\u00c3\u00a9loisenesaitm'\u00c3\u00a9clairer.OhH\u00c3\u00a9loisetueslaseulepourmoi,QuandtuesprochedemoiH\u00c3\u00a9loise,jemesenscommeuneroi.H\u00c3\u00a9loise,apaisemoncoeurboh\u00c3\u00a8me,OhH\u00c3\u00a9loisejet'enprieditmoiquetum'aimes.,H\u00c3\u00a9loise,Sophie,)###SORTIEDUPROGRAMME###Mach\u00c3\u00a8reSophie,tueslesoleildemesjourn\u00c3\u00a9es,###aucuneautrequetoiSophienesaitm'\u00c3\u00a9clairer.###OhSophietueslaseulepourmoi,###QuandtuesprochedemoiSophie,jemesenscommeuneroi.###Sophie,apaisemoncoeurboh\u00c3\u00a8me,###OhSophiejet'enprieditmoiquetum'aimes.",
-            "SIZE": 1292,
+            "CONTENT": "defverifie_distance(v1,v2,d):Enprenantencompte2voituresallantrespectivementunevitessedev1unitetv2unitetsetrouvantunedistancedl'unedel'autre.imprimleurpointderencontre.Enunlangageplusmathmatique.Connaissantv1,v2etd,trouvxtelque:v1*t=x=d-v2*tpassif==:verifie_distance(2,1,12)verifie_distance(2,1,10).66666667",
+            "SIZE": 491,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -85,14 +77,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice5_d\u00e9mele_mot.py",
+            "NAME": "exercice5_paire_impaire.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#5__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defdemele(mots):#Codequid\u00c3\u00a9m\u00c3\u00a8leunmotouunephrasetelqu'uncaract\u00c3\u00a8resurdeuxfaitpartie#d'unephrasetandisquelesautresenfontpartied'uneautre.#Parexemple:#TCihgireen#\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c#Tigre#\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c\u00e2\u2020\u201c#Chienphrase=[,]i=0whilei<len(mots):ifi%2==0:phrase[0]=phrase[0]+mots[i]else:phrase[1]=phrase[1]+mots[i]i+=1print(phrase[0])print(phrase[1])passif__name__==__main__:demele(JJ'eadsouriesmuanngjeoryeuunxelpuoriorne..)#Jesuisunjoyeuxluron.#J'adoremangerunepoire.",
-            "SIZE": 866,
+            "CONTENT": "defpaire_impaire(n):prenantunentiern,imprimerdanslaconsolepairesiils'agitd'unnombrepaireetimpairesinon.Envrifiantsilemodulodenestgal0onvrifiesiilestpairepassif==:paire_impaire(1)impairepaire_impaire(2)pairepaire_impaire(17)impairepaire_impaire(488)paire",
+            "SIZE": 410,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -106,14 +96,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice6_majuscule.py",
+            "NAME": "exercice6_premier.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#6__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defPosition_Points(phrase):#fonctionquipermetdescinderletexteenplusieursphrasesdistinctesmot=.id=phrase.find(mot)returniddefSission_Texte(phrase):ls=[]mot=.whilephrase!=:#id=Position_Points(phrase)id=phrase.find(mot)#positiondu.danslaphrasels.append(phrase[0:id+1].strip())try:phrase=phrase[id+1:len(phrase)]except:phrase=ifid+1>len(phrase):phrase=else:phrase=phrase[id+1:len(phrase)]returnlsdefmajuscule_en_debut_de_phrase(texte):#Codequis'assurequelepremiermotdechaquephrasecommenceparunemajuscule.#Lepremi\u00c3\u00a8relettredechaquephraseetforc\u00c3\u00a9mentunemajuscule.#Lesphrasesseterminentparunpointls=Sission_Texte(texte)i=0whilei<len(ls):print(ls[i].capitalize(),end='')i+=1passif__name__==__main__:majuscule_en_debut_de_phrase(jesuisheureux.noussommesvendredi.c'estbient\u00c3\u00b4tlafindesemaine.)#Jesuisheureux.Noussommesvendredi.C'estbient\u00c3\u00b4tlafindesemaine.",
-            "SIZE": 1434,
+            "CONTENT": "importmathdefverifie_premier(num):Vrifiesiunnombreestpremier.L'imprimesiouiifnum>1:foriinrange(2,int(math.sqrt(num))+1):if(num%i)==0:returnprint(num)returnTruereturnFalsedefimprime_premiers_entre_1_et_n(n):Prenantunentiern,affichertouslesentierspremierentre1etn.Vouspouvezutiliserlafonctionverifie_premierpourvousaider.passdefimprime_n_premiers(n):prenantunentiern,afficherlesnpremiersentiers.Vouspouvezutiliserlafonctionverifie_premierpourvousaider.passif==:imprime_premiers_entre_1_et_n(10)2357imprime_n_premiers(10)2357111317192329",
+            "SIZE": 916,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -127,14 +115,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice7_age.py",
+            "NAME": "exercice7_fizz_buzz.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#7__author__=EtienneGendron(2089899),nom\u00c3\u00a9l\u00c3\u00a8ve2(matricule2)__date__=24/10/2021defgateau_factorie(nb_\u00c3\u00a9tage,hauteur_\u00c3\u00a9tage):#Programmequiimprimeungateaud'anniversairepourl'usager.#Leprogrammecommencepardemanderl'agedel'usageretcontinudeluidemandertantquel'age#n'estpasunentiervalide.#Leprogrammeimprimeensuiteungateausurlequelilyauraautantdebougiesquel'agedel'usager,#ayantnb_\u00c3\u00a9tage(fournieenparam\u00c3\u00a8tre)d'unehauteurde#hauteur_\u00c3\u00a9tage(fournieenparam\u00c3\u00a8tre)chacun.#LeprogremmeafficheensuiteJoyeuxNemeanniversaireouNestl'agedel'utilisateur.#Voiciunexempledegateaupourunusagerde4ans,ayantungateaude2\u00c3\u00a9tagesd'unehauteurde2.Quelageas-tu?4iiii@%@%@%@%@%@%{}{}@%@%@%@%@%@%@%@%{}{}@%@%@%@%@%@%@%@%Joyeux4emeanniversaire#Voiciunexempledegateaupourunusagerde3ans,ayantungateaude3\u00c3\u00a9tagesd'unehauteurde1.Quelageas-tu?3iii@%@%@%@%@%{}@%@%@%@%@%@%@%{}@%@%@%@%@%@%@%@%@%{}@%@%@%@%@%@%@%@%@%Joyeux3emeanniversaire#Voiciunexempledegateaupourunusagerde1ans,ayantungateaude1\u00c3\u00a9taged'unehauteurde1.Quelageas-tu?1i@%@%@%{}@%@%@%Joyeux1emeanniversairedefentier(prompt):whileTrue:try:value=int(input(prompt))exceptValueError:print(Veuillezentrerunentierpositif)continueelse:breakreturnvaluenb_bougie=entier(Quelageavez-vous?:)nb_bougie=int(nb_bougie)space=print(space*nb_\u00c3\u00a9tage,nb_bougie*i)i=1ifi<=nb_\u00c3\u00a9tage:print(space*(nb_\u00c3\u00a9tage-i),(nb_bougie+(2*i))*@%)n=1ifn<=hauteur_\u00c3\u00a9tage:print(space*(nb_\u00c3\u00a9tage-i),{,space*(nb_bougie+(2*(i-1))),})else:returnn=n+1else:returni=i+1print(space*(nb_\u00c3\u00a9tage-i),(nb_bougie+(2*(i-1)))*@%)print(Joyeux,nb_bougie,emeanniversaire)if__name__==__main__:gateau_factorie(1,1)",
-            "SIZE": 2490,
+            "CONTENT": "deffizz_buz(n):Pourleschiffresallantde1n.imprimerfizzsiils'agitd'unmultiplede3imprimerbuzzsiils'agitd'unmultiplede5imprimerfizzbuzzsiils'agitlafoisd'unmultiplede3et5imprimerleditchiffreautrementpassif==:fizz_buz(100)Valeursattenduesentre1et1512fizz4buzzfizz78fizzbuzz11fizz1314fizzbuzz",
+            "SIZE": 544,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
@@ -148,35 +134,12 @@
     },
     {
         "FILE": {
-            "NAME": "exercice8_encryption.py",
+            "NAME": "exercice8_g\u00e9nie.py",
             "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#8__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021defencrypte(texte,cl\u00c3\u00a9):#Codeunemessagetexteend\u00c3\u00a9calantlettreparlacl\u00c3\u00a9#ensuivantunchiffrementdetypeC\u00c3\u00a9saraussiconnusousle#nomdechiffrementpard\u00c3\u00a9calage.#Exemple1,silalettreestA,avecunecl\u00c3\u00a9de3,#ElledevientunD,carDest3lettreplusloindansl'alphabet#Exemple2,silalettreestZ,avecunecl\u00c3\u00a9de2,#ElledevientunB,carBest3lettreplusloindansl'alphabet#siencomptantonrevient\u00c3\u00a0lalettreAapr\u00c3\u00a8sZ.alphabet_upperLower=[abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ]texte_encrypte=i=0whilei<len(texte):iftexte[i].islower()==False:#lettreenmajusculealphabet=alphabet_upperLower[1]else:alphabet=alphabet_upperLower[0]#minusculeiftexte[i]inalphabet:#encryptagepos=alphabet.find(texte[i])#positiondelalettredansl'alphabetposEncrypt=(pos+cl\u00c3\u00a9)%26texte_encrypte=texte_encrypte+alphabet[posEncrypt]else:texte_encrypte=texte_encrypte+texte[i]i+=1returntexte_encryptepassdefd\u00c3\u00a9crypte(texte,cl\u00c3\u00a9):#D\u00c3\u00a9codeunemessagetexteend\u00c3\u00a9calantlettreparlacl\u00c3\u00a9#ensuivantunchiffrementdetypeC\u00c3\u00a9saraussiconnusousle#nomdechiffrementpard\u00c3\u00a9calage.#Exemple1,silalettreestD,avecunecl\u00c3\u00a9de3,#ElledevientunA,carDest3lettreplusloinqueAdansl'alphabet#Exemple2,silalettreestB,avecunecl\u00c3\u00a9de2,#ElledevientunZ,carBest3lettreplusloinqueZdansl'alphabet#siencomptantonrevient\u00c3\u00a0lalettreAapr\u00c3\u00a8sZ.alphabet_upperLower=[abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ]texte_decrypte=cl\u00c3\u00a9=-cl\u00c3\u00a9i=0whilei<len(texte):iftexte[i].islower()==False:#lettreenmajusculealphabet=alphabet_upperLower[1]else:alphabet=alphabet_upperLower[0]#minusculeiftexte[i]inalphabet:#encryptagepos=alphabet.find(texte[i])#positiondelalettredansl'alphabetposDecrypt=(pos+cl\u00c3\u00a9)%26texte_decrypte=texte_decrypte+alphabet[posDecrypt]else:texte_decrypte=texte_decrypte+texte[i]i+=1returntexte_decryptepassif__name__==__main__:message_encrypt\u00c3\u00a9=encrypte(Allopoly,3)print(message_encrypt\u00c3\u00a9)#Doorsrobmassage_d\u00c3\u00a9crypt\u00c3\u00a9=d\u00c3\u00a9crypte(message_encrypt\u00c3\u00a9,3)print(massage_d\u00c3\u00a9crypt\u00c3\u00a9)#cAllopoly",
-            "SIZE": 2903,
+            "CONTENT": "defcheck_input(msg):Fonctionquiposeunemsgl'utilisateur.Celui-cipeutrpondreypourouietnpournonRetourneTruelorsquelerponseestouietFalselorsquelarponseestnonans=whileans!=yandans!=n:ans=input(msg)ans=ans.strip().lower()ifans==y:returnTrueelifans==n:returnFalseelse:print(Uneerreurinnatendues'estproduite)defquel_gnie_es_tu():Cenumroestunpeuparticulier,carilvafalloirvousmontrercratif.Vousdevezcoderunjeu.Danscejeuvousposerezdessl'utilisateur,celles-ciserpondeparoui(y)ounon(n).partirdesrponsesdecesetd'unarbredevritvousdevezdevinerquelestlegniedel'utilisateuretl'imprimer.Vousteslibresdeposerlessquevousvoulezetdecrerl'arbrelastructurequevousvoulezUnesortiedoitexisterpourchaquegnieoffertpolytechnique.C'estdire...GniebiomdicalGniechimiqueGniecivilGniegologiqueGniedesminesGnielectriqueGnielogicielGnieinformatiqueGniemcaniqueGniephysiquepassif==:quel_gnie_es_tu()",
+            "SIZE": 1436,
             "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
-        },
-        "PARENT": {
-            "PARENT_WEIGHT": 0,
-            "PARENT_NAME": "",
-            "PARENT_SIZE": 0,
-            "PARENT_LAST_MODIFICATION": "",
-            "PARENT_PLSCS": [
-                []
-            ]
-        }
-    },
-    {
-        "FILE": {
-            "NAME": "exercice9_pendu.py",
-            "WEIGHT": 0,
-            "CONTENT": "__version__=TP3Question#9__author__=EtienneGendron(2089899),Zour\u00c3\u00a9Oussen\u00c3\u00ae(2003084)__date__=24/10/2021frompendu_ascii_artimportpendu#Pourcetexercicenousallonsprogrammerunjeudebonhommependu.#Pourcetexercicevousaurez\u00c3\u00a0compl\u00c3\u00a9terplusieursfonctionquivouspermettront#ultimementdejoueraujeu.#Necompl\u00c3\u00a8terquelesfonctionscommen\u00c3\u00a7antparTODO.#Cesfonctionssont:#imprime_mot()#imprime_lettres_sortie()#devine_lettre()#v\u00c3\u00a9rifie_victoire()mot=lettres_trouv\u00c3\u00a9es=lettres_rejet\u00c3\u00a9es=nombre_essais_restant=6defimprime_mot():#TODOprint(---Lettretrouv\u00c3\u00a9es---)mot_suite=forlettreinmot:iflettreinlettres_trouv\u00c3\u00a9es:mot_suite+=lettre+else:mot_suite+=_print(mot_suite)#Fonctionquiimprimelemot\u00c3\u00a0trouverenrempla\u00c3\u00a7antleslettres#encoreinconnuesparlesymbole_.#Silemot\u00c3\u00a0trouverest:chenille#Etleslettredevin\u00c3\u00a9esont:cel#Affiche:c_e__lle#Silemot\u00c3\u00a0trouverest:Renard#Etleslettredevin\u00c3\u00a9esont:ean#Affiche:_ena__passdefimprime_lettres_sortie():#TODOprint(---Lettrerejet\u00c3\u00a9es---)lettres_rejet\u00c3\u00a9es_majuscule=forLinlettres_rejet\u00c3\u00a9es:lettres_rejet\u00c3\u00a9es_majuscule+=L.upper()+print(lettres_rejet\u00c3\u00a9es_majuscule)#Imprimeleslettreayant\u00c3\u00a9t\u00c3\u00a9devin\u00c3\u00a9e,maisnesetrouvantpasdanslemotenless\u00c3\u00a9parant#pardesespaces.#Sileslettresacfont\u00c3\u00a9t\u00c3\u00a9rejet\u00c3\u00a9escommenefaisantpaspartiedumot,#imprime:ACF#Sileslettresqpmzont\u00c3\u00a9t\u00c3\u00a9rejet\u00c3\u00a9escommenefaisantpaspartiedumot,#imprime:ACFpassdefdevine_lettre():#TODO#Icionutilisedesvariableglobales,c'est\u00c3\u00a0direqu'ellesontcr\u00c3\u00a9\u00c3\u00a9\u00c3\u00a0l'ext\u00c3\u00aarieurdelafonction#etpeuvent\u00c3\u00aatreutilis\u00c3\u00a9e\u00c3\u00a0l'int\u00c3\u00a9rieurcomme\u00c3\u00a0l'ext\u00c3\u00aarieur.#G\u00c3\u00a9n\u00c3\u00a9ralementonles\u00c3\u00a9vites,carellespeuvent\u00c3\u00aatred\u00c3\u00a9clicate\u00c3\u00a0manipuleretcauseretbugdifficilement#d\u00c3\u00a9celable.Dansnotrecasnotreprogrammeestrelativementsimpleetvousn'avezpasencoreappris#desolutionsalternatives,nousnousencontenteronsdonc.globalnombre_essais_restantgloballettres_trouv\u00c3\u00a9esgloballettres_rejet\u00c3\u00a9esglobalmotlettre_devinee=input(Devinezunelettre:)whilelettre_devinee.isalpha()==False:print(Lettreinvalide)lettre_devinee=input(Devinezunelettreanouveau:)whilelettre_devineeinlettres_rejet\u00c3\u00a9esorlettre_devineeinlettres_trouv\u00c3\u00a9es:print(Tuasdejaessayededevinercettelettre)lettre_devinee=input(Choisissezuneautrelettre:)iflettre_devineeinmot:print(Bientrouve!)lettres_trouv\u00c3\u00a9es+=lettre_devineeelse:print(Non,lalettren'estpasdanslemotchoisie.)lettres_rejet\u00c3\u00a9es+=lettre_devineenombre_essais_restant-=1#Demande\u00c3\u00a0l'utilisateurdedevinerunelettreetcontinudelui#demandertantqu'ilnefourniepasunelettrevalide.#Silalettren'estpasvalideafficher:Lettreinvalide#Sil'utilisateurad\u00c3\u00a9j\u00c3\u00a0essay\u00c3\u00a9dedevinercettelettreafficher:Tuasd\u00c3\u00a9j\u00c3\u00a0essay\u00c3\u00a9dedevinercettelettre#Silelettreestvalideetqu'ellesetrouvedanslemot\u00c3\u00a0devinerl'ajouter\u00c3\u00a0lettres_trouv\u00c3\u00a9es#etafficher:Bientrouv\u00c3\u00a9!#Silelettreestvalideetqu'ellenesetrouvepasdanslemot\u00c3\u00a0devinerl'ajouter\u00c3\u00a0lettres_rejet\u00c3\u00a9es#etafficher:Non,lalettren'estpasdanslemotchoisie.passdefverifie_victoire():#TODOcheck=all(iteminlettres_trouv\u00c3\u00a9esforiteminmot)ifcheck:returnTrueelse:returnFalse#V\u00c3\u00a9rifiesitouteleslettredumot\u00c3\u00a0devineron\u00c3\u00a9t\u00c3\u00a9trouv\u00c3\u00a9danslavariablelettre_trouv\u00c3\u00a9es.passdefimprime_pendu():#Imprimeledessindupenduencharact\u00c3\u00a8reASCIItelqued\u00c3\u00a9finidanspendu_ascii_art.pyprint(pendu.get(nombre_essais_restant))defimprime_\u00c3\u00a9tat_du_jeu():imprime_pendu()imprime_lettres_sortie()imprime_mot()defjeu():playing=True#Tantquelapartieestencourswhileplaying:#Demanderaujoueurdechoisirunmotglobalmotmot=$#Luidemanderdechoisirunmottantquecelui-cin'estpasvalide.whilenotmot.isalpha():mot=input(Choisissezunmot:)ifnotmot.isalpha():print(Motinvalide)#D\u00c3\u00a9finirlesparam\u00c3\u00a8tredelapartie\u00c3\u00a0leurvaleurinitiale.globalnombre_essais_restantgloballettres_rejet\u00c3\u00a9esgloballettres_trouv\u00c3\u00a9eslettres_trouv\u00c3\u00a9es=lettres_rejet\u00c3\u00a9es=nombre_essais_restant=6#Imprimerl'\u00c3\u00a9tatinitialdujeuimprime_\u00c3\u00a9tat_du_jeu()whilenombre_essais_restant>0andnotverifie_victoire():#Tantqu'ilrestedesessaisaujoueur,luidemanderdedevinerunelettredevine_lettre()#etimprimerl'\u00c3\u00a9tatactueldujeuimprime_\u00c3\u00a9tat_du_jeu()ifnombre_essais_restant>0:#Silejourparvient\u00c3\u00a0devinerlemot,lef\u00c3\u00a9liciter!print(Bravo!Vousavezgagnez!)ifnombre_essais_restant==0:#Silejoueurn'estpasparvenu\u00c3\u00a0devinerlemotluidirequ'ilaperduprint(Vousavezperdu)if(#Proposeraujoueurderejouerinput(Rejouer?(q->quitter,n'importequoid'autrepourcontinuer):)==q):playing=Falseif__name__==__main__:jeu()",
-            "SIZE": 6048,
-            "LAST_MODIFICATION": "Fri Nov  5 17:12:56 2021",
-            "PLSCS": [
-                []
-            ]
+            "PLSCS": []
         },
         "PARENT": {
             "PARENT_WEIGHT": 0,
