@@ -1,12 +1,3 @@
-EXOS
 EXOS/*
-./EXOS
-./EXOS/*
-/EXOS
-/EXOS/*
-OUT
 OUT/*
-./OUT
-./OUT/*
-/OUT
-/OUT/*
+__pycache__/*
