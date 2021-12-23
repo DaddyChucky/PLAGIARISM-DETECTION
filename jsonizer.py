@@ -65,7 +65,7 @@ for i, f in enumerate(listdir(FOLDER_PATH_EXOS)):
         with open(F_PATH, mode='r') as F_CONTENT:
             content = F_CONTENT.read()
             for ignores in DUMP_IGNORE:
-                content = content.replace(ignores, '').replace(ignores.upper(), '').replace(ignores.capitalize(), '').replace(ignores.title(), '')
+                content = content.replace(ignores, '').replace(ignores.upper(), '').replace(ignores.capitalize(), '').replace(ignores.title(), '').lower()
             DUMPER[JSONIZER_CURRENT_FILE][JSONIZER_CONTENT] = content
         DUMP_LIST.append(deepcopy(DUMPER))
 

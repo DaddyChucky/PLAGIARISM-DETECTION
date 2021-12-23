@@ -22,9 +22,9 @@ def PLSC(ORIGIN: str, EXTERNAL: str) -> tuple():
 
     for X in range(1, ARRAY_LENGTH[0]):
         for Y in range(1, ARRAY_LENGTH[1]):
-            ORIGIN_CURRENT_LETTER   = ORIGIN[Y - 1] if (Y - 1) < len(ORIGIN) else ORIGIN[-1]
-            EXTERNAL_CURRENT_LETTER = EXTERNAL[X - 1] if (X - 1) < len(EXTERNAL) else EXTERNAL[-1]
-
+            ORIGIN_CURRENT_LETTER   = ORIGIN[X - 1] if (X - 1) < len(ORIGIN) else ORIGIN[-1]
+            EXTERNAL_CURRENT_LETTER = EXTERNAL[Y - 1] if (Y - 1) < len(EXTERNAL) else EXTERNAL[-1]
+            
             DIAG    = PLSC_WEIGHT[X - 1][Y - 1]
             TOP     = PLSC_WEIGHT[X - 1][Y]
             LEFT    = PLSC_WEIGHT[X][Y - 1]
@@ -32,7 +32,6 @@ def PLSC(ORIGIN: str, EXTERNAL: str) -> tuple():
             if ORIGIN_CURRENT_LETTER == EXTERNAL_CURRENT_LETTER:
                 PLSC_WEIGHT[X][Y]   = DIAG + 1
                 PLSC_DIR[X][Y]      = DIAG_DIR
-
             else:
                 if TOP >= LEFT:
                     PLSC_WEIGHT[X][Y]   = TOP
@@ -42,37 +41,24 @@ def PLSC(ORIGIN: str, EXTERNAL: str) -> tuple():
                     PLSC_DIR[X][Y]      = LEFT_DIR
 
     # PLSC Array construction is finished. Let's iterate backwards to retrieve the PLSC.
-    PLSC_FINAL_WEIGHT = PLSC_WEIGHT[ARRAY_LENGTH[0], ARRAY_LENGTH[1]]
+    PLSC_FINAL_WEIGHT = PLSC_WEIGHT[ARRAY_LENGTH[0] - 1, ARRAY_LENGTH[1] - 1]
+
 
     ###
     #   --> START BACKTRACKING <--
     ###
 
     PLSC = ""
-    for x in range(ARRAY_LENGTH[0]):
-        for y in range (ARRAY_LENGTH[1]):
+    X, Y = ARRAY_LENGTH[0] - 1, ARRAY_LENGTH[1] - 1
 
-PLSC("ABAT", "ABBASFSFA")
+    while PLSC_WEIGHT[X][Y] != 0 and PLSC_DIR[X][Y] != 0:
+        if PLSC_DIR[X][Y] == DIAG_DIR:
+            PLSC += ORIGIN[X - 1]
+            X -= 1
+            Y -= 1
+        elif PLSC_DIR[X][Y] == TOP_DIR:
+            X -= 1
+        else:
+            Y -= 1
 
-###
-#   --> READ FILES AND START COMPARISON <--
-###
-
-# from loadcsts import *
-# from json import load
-
-# with open(FILE_OUT, "r") as F_OUT:
-#     JSON_OUT_R = load(F_OUT)
-
-# for I_FILE in JSON_OUT_R:
-#     ITERATED_FILE           = I_FILE[JSONIZER_CURRENT_FILE]
-#     ITERATED_FILE_CONTENT   = ITERATED_FILE[JSONIZER_CONTENT]
-#     ITERATED_FILE_NAME      = ITERATED_FILE[JSONIZER_NAME]
-
-#     for C_FILE in JSON_OUT_R:
-#         COMPARED_FILE           = C_FILE[JSONIZER_CURRENT_FILE]
-#         COMPARED_FILE_NAME      = COMPARED_FILE[JSONIZER_NAME]
-        
-#         if COMPARED_FILE_NAME != ITERATED_FILE_NAME: # Do not compare file with itself
-#             COMPARED_FILE_CONTENT = COMPARED_FILE[JSONIZER_CONTENT]
-#             NEW_PLSC_WEIGHT = PLSC(ITERATED_FILE_CONTENT, COMPARED_FILE_CONTENT)
+    return round(PLSC_FINAL_WEIGHT / min(len(ORIGIN), len(EXTERNAL)), 5), "" + str(PLSC_FINAL_WEIGHT) + "/" + str(min(len(ORIGIN), len(EXTERNAL))), PLSC[::-1], 
