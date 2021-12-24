@@ -31,15 +31,13 @@ elif not EXOS_RICH_PRESENCE:
 ###
 
 JSONIZER = {
-    JSONIZER_CURRENT_FILE: {
-        JSONIZER_PLAGIARISM_WEIGHT: 0.,
-        JSONIZER_PARENT: "",
-        JSONIZER_NAME: "",
-        JSONIZER_CONTENT: [],
-        JSONIZER_SIZE: 0,
-        JSONIZER_LAST_MODIFICATION: "",
-        JSONIZER_PLSCS: [],
-    }
+    JSONIZER_PLAGIARISM_WEIGHT: 0.,
+    JSONIZER_PARENT: "",
+    JSONIZER_NAME: "",
+    JSONIZER_CONTENT: [],
+    JSONIZER_SIZE: 0,
+    JSONIZER_LAST_MODIFICATION: "",
+    JSONIZER_PLSCS: [],
 }
 
 from json import dump
@@ -49,19 +47,48 @@ from copy import deepcopy
 DUMP_LIST = []
 
 i = 0
-for i, f in enumerate(listdir(FOLDER_PATH_EXOS)):
-    F_PATH = join(FOLDER_PATH_EXOS, f)
-    if isfile(F_PATH):
-        DUMPER = JSONIZER
-        DUMPER[JSONIZER_CURRENT_FILE][JSONIZER_NAME] = f
-        DUMPER[JSONIZER_CURRENT_FILE][JSONIZER_SIZE] = getsize(F_PATH)
-        DUMPER[JSONIZER_CURRENT_FILE][JSONIZER_LAST_MODIFICATION] = ctime(getmtime(F_PATH))
-        with open(F_PATH, mode='r') as F_CONTENT:
-            content = F_CONTENT.read()
-            for ignores in DUMP_IGNORE:
-                content = content.replace(ignores, '').replace(ignores.upper(), '').replace(ignores.capitalize(), '').replace(ignores.title(), '').lower()
-            DUMPER[JSONIZER_CURRENT_FILE][JSONIZER_CONTENT] = content
-        DUMP_LIST.append(deepcopy(DUMPER))
+
+PATHS = listdir(FOLDER_PATH_EXOS)
+while True: # DFS
+    try:
+        CURRENT_PATH = join(FOLDER_PATH_EXOS, PATHS.pop(0))
+        for DIR in listdir(CURRENT_PATH):
+            DIR_PATH = join(CURRENT_PATH, DIR)
+
+            VALID = True
+            for IGNORE in FOLDER_IGNORE + FILE_IGNORE:
+                VALID = True
+                if DIR.lower()[:len(IGNORE)] == IGNORE.lower() or DIR.lower()[-len(IGNORE):] == IGNORE.lower():
+                    VALID = False
+                    break
+            
+            if not VALID: 
+                continue
+            
+            if isdir(DIR_PATH):
+                PATHS.append(DIR_PATH)
+            else:
+                i += 1
+                F_PATH = DIR_PATH
+                if isfile(F_PATH):
+                    DUMPER = JSONIZER
+                    DUMPER[JSONIZER_NAME]               = F_PATH
+                    DUMPER[JSONIZER_SIZE]               = getsize(F_PATH)
+                    DUMPER[JSONIZER_LAST_MODIFICATION]  = ctime(getmtime(F_PATH))
+                    with open(F_PATH, mode='r', encoding="utf8") as F_CONTENT:
+                        try:
+                            content = F_CONTENT.read()
+                        except UnicodeDecodeError:
+                            content = ""
+                        for ignores in DUMP_IGNORE:
+                            content = content.replace(ignores, '').replace(ignores.upper(), '').replace(ignores.capitalize(), '').replace(ignores.title(), '').lower()
+                        DUMPER[JSONIZER_CONTENT] = content
+                    DUMP_LIST.append(deepcopy(DUMPER))
+       
+    except IndexError:
+        break
+
+
 
 with open(FILE_OUT, "w") as F_OUT:
     dump(DUMP_LIST, F_OUT, indent=4, separators=(',', ': '))
