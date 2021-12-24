@@ -12,9 +12,9 @@ Plagiarism detection between students' copies.
 
 - First start? Launch *jsonizer.py* to help you make **EXOS** and **OUT** directories. 
 - Then, simply put a **ZIP** or a Project folder inside the **EXOS** directory newly created.
-- Define the constants for the files and extra folders to ignore while dezipping in *constants.JSON*
+- Define the constants for the files and extra folders to ignore while dezipping in *constants.JSON*.
 - For a quick start, run *oneliner.py*.
-- For an advanced start, run *dezipper.py* followed by *jsonizer.py*. After this *jsonizer.py* launch, you will see *plscOut.JSON* in your **OUT** directory. You may open it to see all the 'compiled' and, perhaps, reajust your constants in *constants.JSON*. After that, launch *comparer.py* which calculates the PLSCs of all files listed in your *plscOut.JSON*. Once that step is finished, run *updater.py* which will normalize to the smallest weight all the PLSCs found. The last step is to run *revealcheats.py* which reveals all the potential cheaters depending on the PLSCs.
+- For an advanced start, run *dezipper.py* followed by *jsonizer.py*. After this *jsonizer.py* launch, you will see *plscOut.JSON* in your **OUT** directory. You may open it to see all the 'compiled' files and, perhaps, reajust your constants in *constants.JSON*. After that, launch *comparer.py* which calculates the PLSCs of all files listed in your *plscOut.JSON*. Once that step is finished, run *updater.py* which will normalize to the smallest weight all the PLSCs found. The last step is to run *revealcheats.py* which reveals all the potential cheaters depending on the PLSCs.
 
 ## FILE EXTENT DESCRIPTION
 
