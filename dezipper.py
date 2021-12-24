@@ -20,11 +20,14 @@ def unzip(path: Path, total_count: int = 0): # https://stackoverflow.com/questio
                 total_count += 1
             else:
                 currentdir = file_name[:-4]
-                if not exists(currentdir):
-                    makedirs(currentdir)
-                with ZipFile(file_name) as zipObj:
-                    zipObj.extractall(currentdir)
-                remove(file_name)
+                try:
+                    if not exists(currentdir):
+                        makedirs(currentdir)
+                    with ZipFile(file_name) as zipObj:
+                        zipObj.extractall(currentdir)
+                    remove(file_name)
+                except Exception:
+                    continue
                 total_count = unzip(currentdir, total_count)
     return total_count
 
@@ -32,9 +35,5 @@ if not EXOS_RICH_PRESENCE:
     mkdir(FOLDER_PATH_EXOS)
     quit(f"WARNING NO-CONTENT: Created folder {FOLDER_PATH_EXOS}")
 
-try:
-    unzip(FOLDER_PATH_EXOS)
-except Exception as e:
-    quit(e)
+unzip(FOLDER_PATH_EXOS)
 print(f"Successfully unzipped all files in {FOLDER_PATH_EXOS}")
-
