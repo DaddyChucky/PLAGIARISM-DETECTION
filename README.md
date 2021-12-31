@@ -1,3 +1,4 @@
+# This project is continued on [GitLab](https://gitlab.com/DaddyChucky/PLAGIARISM-DETECTION)!
 # COPYRIGHT
 ## © 2021-2022; DE LAFONTAINE, Charles.
 
