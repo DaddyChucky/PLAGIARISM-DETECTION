@@ -1,5 +1,2 @@
-EXOS/
-OUT/
-__pycache__/
-backup/
-ZIP/
+/target
+/output
