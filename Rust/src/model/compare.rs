@@ -6,7 +6,7 @@ use std::{
     sync::{Arc, Mutex},
 };
 
-pub fn compare_all(minimum_match: usize) -> Result<Arc<Mutex<Vec<(String, f64)>>>> {
+pub fn compare_all(minimum_match: usize) -> Result<Vec<(String, f64)>> {
     let output = fs::read_dir(OUTPUT_FOLDER)?;
     let mut files = vec![];
     for entry in output {
@@ -48,5 +48,5 @@ pub fn compare_all(minimum_match: usize) -> Result<Arc<Mutex<Vec<(String, f64)>>
                     }
                 });
         });
-    Ok(result)
+    Ok(Arc::try_unwrap(result).unwrap().into_inner().unwrap())
 }

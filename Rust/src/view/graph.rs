@@ -5,13 +5,11 @@ use eframe::{
     },
     epaint::Color32,
 };
-use std::sync::{Arc, Mutex};
 
-pub fn transform(data: Arc<Mutex<Vec<(String, f64)>>>) -> Vec<Bar> {
-    let mut result = Arc::try_unwrap(data).unwrap().into_inner().unwrap();
-    result.sort_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
+pub fn transform(mut data: Vec<(String, f64)>) -> Vec<Bar> {
+    data.sort_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
 
-    result
+    data
         .iter()
         .enumerate()
         .map(|(i, (name, value))| Bar::new(i as f64 + 0.5, *value).name(name))
