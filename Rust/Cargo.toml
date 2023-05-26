@@ -1,7 +1,9 @@
 [package]
 name = "plagiarism_detector"
+authors = ["Marc-Antoine Manningham"]
 version = "0.1.0"
 edition = "2021"
+description = "Plagiarism detector using Running Karp-Rabin Greedy String Tiling."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

@@ -1,3 +1,4 @@
+use super::constant::OUTPUT_FOLDER;
 use anyhow::Result;
 use ignore::{
     gitignore::{Gitignore, GitignoreBuilder},
@@ -5,8 +6,6 @@ use ignore::{
 };
 use rayon::prelude::*;
 use std::{fs, path::Path};
-
-use super::constant::OUTPUT_FOLDER;
 
 fn merge_dir_to_string(dir: &Path, result: &mut Vec<u8>, gitignore: &Gitignore) {
     if !dir.is_dir() {
@@ -28,7 +27,7 @@ fn merge_dir_to_string(dir: &Path, result: &mut Vec<u8>, gitignore: &Gitignore) 
             let Ok(file_content) = fs::read_to_string(path) else {continue};
             file_content
                 .chars()
-                .filter(|x| x.is_ascii())
+                .filter(|x| x.is_ascii() && !x.is_ascii_whitespace())
                 .map(|x| x as u8)
                 .for_each(|x| result.push(x));
         }
