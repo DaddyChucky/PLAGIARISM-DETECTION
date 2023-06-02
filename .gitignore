@@ -1,0 +1,6 @@
+__pycache__
+
+# >>> Lies below rollback-friendly ignores for v1.0.0 while scaling to upwards versionings
+EXOS/ 
+OUT/
+# <<< 
