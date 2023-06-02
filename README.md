@@ -6,4 +6,4 @@
 
 # HoF
 
-- [Marc-Antoine Manningham](https://github.com/marcantoinem) for providing Rust implementation (release v2.0.0)
+- [Marc-Antoine Manningham](https://github.com/marcantoinem) for providing Rust implementation (release v2.0)
