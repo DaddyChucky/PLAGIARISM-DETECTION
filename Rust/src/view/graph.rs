@@ -1,3 +1,4 @@
+/// Chart the result into a graph and show it
 use eframe::{
     egui::{
         plot::{Bar, BarChart, Legend, Plot},
@@ -9,8 +10,7 @@ use eframe::{
 pub fn transform(mut data: Vec<(String, f64)>) -> Vec<Bar> {
     data.sort_by(|x, y| y.1.partial_cmp(&x.1).unwrap());
 
-    data
-        .iter()
+    data.iter()
         .enumerate()
         .map(|(i, (name, value))| Bar::new(i as f64 + 0.5, *value).name(name))
         .collect()

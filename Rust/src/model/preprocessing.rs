@@ -1,3 +1,4 @@
+/// Preprocess files by removing the skeleton of the assignment and whitespace and merging everything into one file
 use super::constant::OUTPUT_FOLDER;
 use anyhow::Result;
 use ignore::{

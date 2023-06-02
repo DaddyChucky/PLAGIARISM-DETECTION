@@ -1,3 +1,4 @@
+/// Pairwise comparison between all preprocessed files.
 use super::constant::OUTPUT_FOLDER;
 use anyhow::Result;
 use rayon::prelude::*;

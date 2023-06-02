@@ -1,3 +1,4 @@
+/// Main windows shown when executing the application
 use super::{
     graph::{chart, transform},
     task::expensive_task_button,
