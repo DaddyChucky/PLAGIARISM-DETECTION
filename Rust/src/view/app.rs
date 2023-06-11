@@ -1,12 +1,9 @@
 /// Main windows shown when executing the application
-use super::{
-    graph::{chart, transform},
-    task::expensive_task_button,
-};
+use super::graph::{chart, transform};
+use super::task::Task;
 use crate::model;
 use anyhow::Result;
 use eframe::egui::{self, plot::Bar, Slider, Ui};
-use poll_promise::Promise;
 use rfd::FileDialog;
 use serde::{Deserialize, Serialize};
 
@@ -21,9 +18,9 @@ pub struct PlagiarismDetector {
     minimum_match: usize,
     reset: bool,
     #[serde(skip)]
-    promise_preprocess: Option<Promise<Result<()>>>,
+    promise_preprocess: Task<Result<()>>,
     #[serde(skip)]
-    promise_compare: Option<Promise<Vec<Bar>>>,
+    promise_compare: Task<Vec<Bar>>,
 }
 
 impl PlagiarismDetector {
@@ -51,7 +48,6 @@ impl PlagiarismDetector {
                     if let Some(path) = FileDialog::new().set_directory(".").pick_folder() {
                         self.input_dir = Some(path.display().to_string());
                         self.preprocess_done = false;
-                        self.promise_preprocess = None;
                     }
                 }
                 if let Some(input_dir) = &self.input_dir {
@@ -71,17 +67,14 @@ impl PlagiarismDetector {
             let input_dir = input_dir.clone();
             let example = example.clone();
             let gitignore = self.gitignore.clone();
-            let promise = &mut self.promise_preprocess;
             let preprocess_fn =
                 move || model::preprocessing::preprocess(input_dir, example, gitignore);
-            let interior_fn = || self.promise_compare = None;
-            expensive_task_button(ui, promise, "Preprocess", preprocess_fn, interior_fn);
-            if let Some(promise_preprocess) = &self.promise_preprocess {
-                if let Some(result) = promise_preprocess.ready() {
-                    match result {
-                        Ok(_) => self.preprocess_done = true,
-                        Err(error) => println!("{}", error),
-                    }
+            self.promise_preprocess
+                .expensive_task_button(ui, "Preprocess", preprocess_fn, || ());
+            if let Some(result) = self.promise_preprocess.ready() {
+                match result {
+                    Ok(_) => self.preprocess_done = true,
+                    Err(error) => println!("{}", error),
                 }
             }
         }
@@ -94,15 +87,13 @@ impl PlagiarismDetector {
                 .text("Minimum match length")
                 .logarithmic(true),
         );
-        let promise = &mut self.promise_compare;
         let minimum_match = self.minimum_match;
         let compare_fn = move || transform(model::compare::compare_all(minimum_match).unwrap());
         let interior_fn = || self.reset = true;
-        expensive_task_button(ui, promise, "Compare", compare_fn, interior_fn);
-        if let Some(promise_compare) = &self.promise_compare {
-            if let Some(result) = promise_compare.ready() {
-                chart(ui, result, &mut self.reset);
-            }
+        self.promise_compare
+            .expensive_task_button(ui, "Compare", compare_fn, interior_fn);
+        if let Some(result) = self.promise_compare.ready() {
+            chart(ui, result, &mut self.reset);
         }
     }
 }

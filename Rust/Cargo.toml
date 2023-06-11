@@ -18,7 +18,6 @@ lto = "fat"
 anyhow = "1.0.71"
 env_logger = "0.10"
 ignore = "0.4"
-poll-promise = "0.2.0"
 rayon = "1.7.0"
 rfd = {version = "0.11.3", default-features = false, features = ["xdg-portal"]}
 rkr-gst = {git = "https://github.com/marcantoinem/rkr-gst/", rev = "ef6fd0ccde51c9578e1c6c354051ce116d074dcb"}
