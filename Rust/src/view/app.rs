@@ -67,10 +67,11 @@ impl PlagiarismDetector {
             let input_dir = input_dir.clone();
             let example = example.clone();
             let gitignore = self.gitignore.clone();
-            let preprocess_fn =
+            let interior = || self.promise_compare = Task::NotStarted;
+            let preprocess =
                 move || model::preprocessing::preprocess(input_dir, example, gitignore);
             self.promise_preprocess
-                .expensive_task_button(ui, "Preprocess", preprocess_fn, || ());
+                .expensive_task_button(ui, "Preprocess", preprocess, interior);
             if let Some(result) = self.promise_preprocess.ready() {
                 match result {
                     Ok(_) => self.preprocess_done = true,
