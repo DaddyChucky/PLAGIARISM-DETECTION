@@ -1,4 +1,4 @@
-/// Button that execute an expensive task without blocking the rendering thread or necessiting a asynchronous framework like Tokio
+/// Button that execute an expensive task without blocking the rendering thread or necessiting an asynchronous framework like Tokio
 use eframe::egui::{Button, Ui};
 use std::sync::mpsc::Receiver;
 
