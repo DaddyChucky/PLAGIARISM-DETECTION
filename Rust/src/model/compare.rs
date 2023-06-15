@@ -14,6 +14,9 @@ pub fn compare_all(minimum_match: usize) -> Result<Vec<(String, f64)>> {
         let Ok(entry) = entry else {continue};
         files.push((entry.path(), fs::read_to_string(entry.path()).unwrap()));
     }
+    if files.len() == 0 {
+        return Ok(vec![]);
+    }
     let result = Arc::new(Mutex::new(Vec::new()));
     (0..(files.len() - 1))
         .into_par_iter()

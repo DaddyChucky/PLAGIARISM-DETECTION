@@ -18,9 +18,9 @@ lto = "fat"
 anyhow = "1.0.71"
 env_logger = "0.10"
 ignore = "0.4"
-poll-promise = "0.2.0"
 rayon = "1.7.0"
+xml-rs = "0.8.14" # Not used in the project but necessary for the moment to fix https://nvd.nist.gov/vuln/detail/CVE-2023-34411
 rfd = {version = "0.11.3", default-features = false, features = ["xdg-portal"]}
 rkr-gst = {git = "https://github.com/marcantoinem/rkr-gst/", rev = "ef6fd0ccde51c9578e1c6c354051ce116d074dcb"}
 serde = {version = "1", features = ["derive"]}
-eframe = {version = "0.21", default-features = false, features = ["default_fonts", "wgpu", "persistence"]}
+eframe = {version = "0.22", default-features = false, features = ["default_fonts", "wgpu", "persistence"]}
